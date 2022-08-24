@@ -1,6 +1,37 @@
 const http = require('http')
 const fs = require('fs');
 
+const func1 = () => {
+    console.log("Function 1");
+}
+
+const func2 = () => {
+    console.log("Function 2");
+}
+
+const func3 = () => {
+    console.log("Function 3");
+
+    process.nextTick(() => {
+        console.log("i am nexttick")
+    })
+
+    new Promise( (resolve, reject) => {
+        console.log("promise");
+    } ).then( (res) => { console.log(res)})
+
+    setTimeout( func1, 0);
+
+    func2();
+
+    // mini task  => nextTick
+    // micro task => promise
+    // macro tsk  => setTimeout, setInterval
+
+}
+
+func3();
+
 const server = http.createServer( (req, res) => {
     if(req.url == '/'){
         res.writeHead(200, { 'Content-Type': 'text/html' });
