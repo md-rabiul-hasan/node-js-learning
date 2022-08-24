@@ -12,10 +12,9 @@ const server = http.createServer( (req, res) => {
           data: 'Hello Login!'
         }));
     }else{
-        res.writeHead(404, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({
-            data: 'Page not found :)'
-        }));          
+        res.writeHead(404, { 'Content-Type': 'text/html' });
+        res.write("<h1>Page Not Found</h1>");
+        res.end();        
     }
 })
 
