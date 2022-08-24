@@ -1,0 +1,23 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/md-rabiul-hasan/node-js-learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/md-rabiul-hasan/node-js-learning/issues"
+  },
+  "homepage": "https://github.com/md-rabiul-hasan/node-js-learning#readme",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
