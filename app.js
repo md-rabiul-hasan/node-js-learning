@@ -1,10 +1,7 @@
-const http = require("http");
+const Circle = require('./circle');
 
-const server = http.createServer( (req, res) => {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({
-        data: 'Hello World!'
-    }));
-} );
+const circle = new Circle();
 
-server.listen(3000);
+console.log(circle.area(5));
+
+console.log(circle.circumference(5));
