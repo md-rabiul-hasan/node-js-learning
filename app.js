@@ -10,19 +10,19 @@ const func2 = () => {
 }
 
 const func3 = () => {
-    console.log("Function 3");
+    console.log("Function 3"); //  1
 
-    process.nextTick(() => {
+    process.nextTick(() => { // 2
         console.log("i am nexttick")
     })
 
-    new Promise( (resolve, reject) => {
-        console.log("promise");
+    new Promise( (resolve, reject) => { // 3
+        resolve("promise");
     } ).then( (res) => { console.log(res)})
 
-    setTimeout( func1, 0);
+    setTimeout( func1, 0); // 4
 
-    func2();
+    func2(); // 5
 
     // mini task  => nextTick
     // micro task => promise
