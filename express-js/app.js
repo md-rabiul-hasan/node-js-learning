@@ -8,7 +8,10 @@ myEmitter.on('event', (data) => {
 
 const express = require("express")
 const app = express();
+const router = require("./routes/route")
 const PORT = 3000;
+
+
 
 app.get('/', (req, res) => {
     myEmitter.emit('event', {name: 'Rabiul Hasan'})
@@ -18,3 +21,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`welcome to ${PORT}`)
 })
+
+app.use(router);
